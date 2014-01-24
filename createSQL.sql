@@ -1,0 +1,7 @@
+DROP TABLE Users;
+
+CREATE TABLE Users(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nickname VARCHAR(128) NOT NULL,
+    password VARCHAR(128) NOT NULL
+);
