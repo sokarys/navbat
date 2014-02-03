@@ -1,6 +1,6 @@
 .classp{
 	background-color: red;
-		text-align: left;
+	text-align: left;
 }
 
 #monp{
@@ -21,4 +21,16 @@ p {
 	margin-right: auto;
 	padding-left: 10px ;
 	width:250px;
+}
+
+header{
+    
+}
+
+footer{
+    
+}
+
+#content{
+   	
 }
