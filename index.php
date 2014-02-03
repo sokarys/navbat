@@ -12,7 +12,7 @@
         <div id="content">
             <?php
                 if(isset($_GET['loginpg'])){
-                    require_once('site/login.php');
+                    include('site/login.php');
                 }else if(isset($_GET['play'])){
                     echo 'Play';
                 }else{
