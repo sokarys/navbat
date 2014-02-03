@@ -1,23 +1,27 @@
-<?php
-// on se connecte à MySQL
-$db = mysql_connect('localhost', 'dbnavbat', 'batpass');
-
-// on sélectionne la base
-mysql_select_db('dbnavbat',$db);
-
-// on crée la requête SQL
-$sql = 'SELECT * FROM Users';
-
-// on envoie la requête
-$req = mysql_query($sql, $db) or die('Erreur SQL !<br>'.$sql.'<br>'.mysql_error());
-
-// on fait une boucle qui va faire un tour pour chaque enregistrement
-while($data = mysql_fetch_assoc($req))
-    {
-    // on affiche les informations de l'enregistrement en cours
-        print_r($data);
-    }
-
-// on ferme la connexion à mysql
-mysql_close();
-?> 
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="style.css" rel="stylesheet" type="text/css">
+        <title></title>
+    </head>
+    <body>
+        <header>
+            <?php include('site/header.php') ?>
+        </header>
+        <div id="content">
+            <?php
+                if(isset($_GET['loginpg'])){
+                    require_once('site/login.php');
+                }else if(isset($_GET['play'])){
+                    echo 'Play';
+                }else{
+                    echo '<a href="index.php?loginpg">Se connecter</a>';
+                }
+            ?>
+        </div>
+        <footer>
+            <?php include('site/footer.php')?>
+        </footer>
+    </body>
+</html>
