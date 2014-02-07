@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -8,22 +11,19 @@
         <title></title>
     </head>
     <body>
-        <header>
-            <?php include('site/header.php') ?>
-        </header>
+        <?php include('site/header.php') ?>
+        <?php include('site/menu.php') ?>
         <div id="content">
             <?php
                 if(isset($_GET['loginpg'])){
-                    include('site/login.php');
+                    include('site/loginpg.php');
+                }else if(isset($_GET['logoutpg'])){
+                    include('site/action/logout.php');
                 }else if(isset($_GET['play'])){
                     echo 'Play';
-                }else{
-                    echo '<a href="index.php?loginpg">Se connecter</a>';
                 }
             ?>
         </div>
-        <footer>
-            <?php include('site/footer.php')?>
-        </footer>
+        <?php include('site/footer.php')?>
     </body>
 </html>

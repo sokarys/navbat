@@ -1,4 +1,3 @@
-<?php
-
-echo 'Footer';
-?>
+<footer>
+    Corpyright
+</footer>
